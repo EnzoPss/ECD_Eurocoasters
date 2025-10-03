@@ -1,0 +1,124 @@
+@startuml
+
+' Personnalisation des stéréotypes PK et FK :
+skinparam class {
+    StereotypeFontColor<<PK>> Black
+    StereotypeFontColor<<FK>> Black
+    StereotypeBackgroundColor<<PK>> YellowGreen
+    StereotypeBackgroundColor<<FK>> LightSkyBlue
+    SterotypeBorderColor<<PK>> Black
+    SterotypeBorderColor<<FK>> Black
+}
+
+' ---------------------------------
+' Définition des entités (tables) :
+' ---------------------------------
+
+entity rollercoasters #FFB84D {
+    <<PK>> rollercoaster_id : Int
+    --
+    nom : VARCHAR(50)
+    structure : ENUM <<bois, acier>>
+    type : ENUM <<sit down, inverted, wing, ...>>
+    date_ouverture : YEAR
+    hauteur : DECIMAL(4,1)
+    --
+    <<FK>> fk_constructeur_id : Int
+    <<FK>> fk_parc_id : Int
+}
+
+entity constructeurs #7FDB67 {
+    <<PK>> constructeur_id : Int
+    --
+    nom : String
+    adresse : String
+    url_site_web : String
+    url_facebook : String
+    url_instagram : String
+    url_linked_in : String
+    date_creation : Date
+    --
+    <<FK>> ville_id : Int
+}
+
+entity parcs #4DA8FF {
+    <<PK>> parc_id : Int
+    --
+    nom : String   
+    date_ouverture : Date
+    superficie : Double
+    --
+    <<FK>> ville_id : Int
+}
+
+entity villes #FF99FF {
+    <<PK>> ville_id : Int
+    --
+    nom : String
+    --
+    <<FK>> pays_id : Int
+}
+
+entity pays #FF6666 {
+    <<PK>> pays_id : Int
+    --
+    nom : String
+}
+
+entity compositions #A4F0FF {
+    <<PK>> <<FK>> fk_rollercoaster_id : Int
+    <<PK>> <<FK>> fk_element_id : Itn
+    --
+    nombre : Int
+}
+
+entity elements #FF6666 {
+    <<PK>> element_id : Int
+    --
+    nom : VARCHAR(50)
+}
+
+entity frequentations #D0D0FF {
+    <<PK>> annee : Date
+    <<PK>> <<FK>> fk_parc_id : Int
+    --
+    nombre_visiteurs : Int
+}
+
+
+' --------------------------------------------
+' Définition des relations entre les entités :
+' --------------------------------------------
+
+rollercoasters }o--o{ constructeurs : "FK"
+
+rollercoasters }o--|| parcs : "FK"
+constructeurs }o--|| villes : "FK"
+parcs }o--|| villes : "FK"
+villes }o--|| pays : "FK"
+
+
+compositions }o--o{ rollercoasters : "FK"
+compositions }o--o{ elements : "FK"
+frequentations }o--|| parcs : "FK"
+
+
+' ---------------------------------------------------------
+' Annotations sur les types ou autres informations utiles :
+' ---------------------------------------------------------
+
+note right of rollercoasters
+    structure : bois, acier
+    type : sit down, inverted, wing, ...
+end note
+
+note right of parcs
+    date_ouverture ne peut pas être de type YEAR
+    car certains parcs sont trop âgés
+end note
+
+note right of elements
+    Exemple : Looping plongeant
+end note
+
+@enduml
