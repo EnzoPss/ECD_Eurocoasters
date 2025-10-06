@@ -97,7 +97,6 @@ constructeurs }o--|| villes : "FK"
 parcs }o--|| villes : "FK"
 villes }o--|| pays : "FK"
 
-
 compositions }o--o{ rollercoasters : "FK"
 compositions }o--o{ elements : "FK"
 frequentations }o--|| parcs : "FK"
