@@ -148,7 +148,7 @@ INSERT INTO parcs (parc_id, nom, fk_ville_id, date_ouverture, superficie) VALUES
 (111, 'Slagharen Themepark & Resort', 110, 1963, 50), (112, 'Terra Mítica', 111, 2000, 100), (113, 'Tibidabo', 112, 1901, 7), (114, 'Vialand', 113, 2013, 60), (115, 'Walibi Rhône-Alpes', 114, 1979, 35),
 (116, 'Freizeitpark Familienland', 138, 2000, NULL);
 
-INSERT INTO frequentations (annee, fk_parc_id, nombre_visiteurs) VALUES
+INSERT INTO frequentations (annee, fk_parc_id, nombre_visiteur) VALUES
 ('2023', 1, 250000), ('2023', 2, 1000000), ('2023', 3, 2000000), ('2023', 4, 300000), ('2023', 5, 600000), ('2023', 6, 1500000), ('2023', 7, 500000), ('2023', 8, 350000),
 ('2023', 9, 200000), ('2023', 10, 6000000), ('2023', 11, 200000), ('2023', 12, 2000000), ('2023', 13, 300000), ('2023', 14, 1000000), ('2023', 15, 2000000), ('2023', 16, 2000000),
 ('2023', 17, 800000), ('2023', 18, 1500000), ('2023', 19, 500000), ('2023', 20, 200000), ('2023', 21, 4000000), ('2023', 22, 300000), ('2023', 23, 1300000), ('2023', 24, 600000),
@@ -225,7 +225,7 @@ INSERT INTO elements (element_id, nom) VALUES
 (131, 'Water Channel'), (132, 'Weight Drop Launch'), (133, 'Windcatcher Tower'), (134, 'Wing Over'), (135, 'Wraparound Corkscrew'),
 (136, 'Zero-G Roll'), (137, 'Zero-G Roll (variant)'), (138, 'Zero-G Stall'), (139, 'Zero-G Winder'), (140, 'Vertical Loop');
 
-INSERT INTO rollercoasters (rollercoaster_id, nom, structure, type, date_ouverture, hauteur, fk_constructeur_id, fk_parc_id) VALUES
+INSERT INTO roallercoasters (roallercoaster_id, nom, structure, type, date_ouverture, hauteur, fk_constructeur_id, fk_parc_id) VALUES
 (1, 'Abismo', 'acier', 'sit down', '2006', 46.2, 8, 27), (2, 'Abyssus', 'acier', 'sit down', '2021', 38.5, 10, 63), (3, 'Alpina Blitz', 'acier', 'sit down', '2014', 33.0, 7, 34), (4, 'Altair', 'acier', 'sit down', '2014', 33.0, 6, 82), (5, 'Anaconda', 'bois', 'sit down', '1989', 36.0, 14, 36), (6, 'Anubis: The Ride', 'acier', 'sit down', '2009', 34.0, 3, 16),
 (7, 'Apocalypse', 'acier', 'sit down', '2012', 22.9, 10, 104), (8, 'Atlantica SuperSplash', 'acier', 'sit down', '2005', 30.0, 7, 10), (9, 'Avengers Assemble: Flight Force', 'acier', 'sit down', '2002', 24.4, 10, 37), (10, 'Balagos', 'acier', 'sit down', '1905', 25.0, 10, 58), (11, 'Balder', 'bois', 'sit down', '2003', 36.0, 6, 76), (12, 'Bandit', 'bois', 'sit down', '1999', 27.8, 15, 2),
 (13, 'Baron 1898', 'acier', 'sit down', '2015', 30.0, 1, 59), (14, 'Batman Gotham City Escape', 'acier', 'sit down', '2023', 45.0, 6, 29), (15, 'Big Bang', 'acier', 'sit down', '2013', 22.0, 12, 116), (16, 'Big Loop', 'acier', 'sit down', '1905', 30.0, 10, 95), (17, 'Big One', 'acier', 'sit down', '1994', 64.9, 16, 65), (18, 'Big Thunder Mountain', 'acier', 'sit down', '1992', 22.0, 10, 37),
@@ -236,7 +236,7 @@ INSERT INTO rollercoasters (rollercoaster_id, nom, structure, type, date_ouvertu
 (43, 'Dragon Khan', 'acier', 'sit down', '1995', 45.1, 1, 28), (44, 'Dreamcatcher', 'acier', 'suspended', '1987', 25.0, 10, 17), (45, 'Dynamite', 'acier', 'sit down', '2019', 44.0, 7, 92), (46, 'El Toro', 'bois', 'sit down', '2009', 24.5, 5, 92), (47, 'Eldorado', 'acier', 'sit down', '2013', 21.0, 19, 45), (48, 'Euro Mir', 'acier', 'sit down', '1997', 28.0, 7, 10),
 (49, 'Eurofigther', 'acier', 'sit down', '2011', 25.0, 3, 49), (50, 'EuroLoop', 'acier', 'sit down', '2004', 30.0, 10, 86), (51, 'Eurosat - CanCan Coaster', 'acier', 'sit down', '1989', 25.5, 7, 10), (52, 'Expedition GeForce', 'acier', 'sit down', '2001', 53.0, 6, 6), (53, 'Falcon', 'acier', 'sit down', '2009', 22.0, 3, 84), (54, 'Fenix', 'acier', 'wing', '2018', 40.0, 1, 61),
 (55, 'Fianna Force', 'acier', 'inverted', '2024', 31.0, 10, 44), (56, 'Fireball', 'acier', 'sit down', '2017', 23.0, 10, 93), (57, 'Fjord Explorer', 'acier', 'sit down', '2024', 27.0, 7, 102), (58, 'Fluch des Kraken', 'acier', 'sit down', '1905', 35.5, 10, 91), (59, 'Flucht von Novgorod', 'acier', 'sit down', '2009', 40.0, 3, 12), (60, 'Flug der Dämonen', 'acier', 'wing', '2014', 40.0, 1, 95),
-(61, 'Fønix', 'acier', 'sit down', '2022', 40.0, 10, 87), (62, 'Force One', 'acier', 'sit down', '2010', 22.0, 20, 110), (63, 'Formula', 'acier', 'sit down', '2016', 24.8, 10, 63), (64, 'Freestyle', 'acier', 'stand up', '2015', 26.8, 21, 46), (65, 'Freischütz', 'acier', 'sit down', '2011', 24.0, 8, 81), (66, 'Fury', 'acier', 'sit down', '2019', 43.0, 3, 17),
+(61, 'Fønix', 'acier', 'sit down', '2022', 40.0, 10, 87), (62, 'Force One', 'acier', 'sit down', '2010', 22.0, 20, 110), (63, 'Formula', 'acier', 'sit down', '2016', 24.8, 10, 63), (64, 'Freestyle', 'acier', 'standup', '2015', 26.8, 21, 46), (65, 'Freischütz', 'acier', 'sit down', '2011', 24.0, 8, 81), (66, 'Fury', 'acier', 'sit down', '2019', 43.0, 3, 17),
 (67, 'Generator', 'acier', 'sit down', '1988', 35.5, 10, 115), (68, 'Gesengte Sau', 'acier', 'sit down', '2020', 24.0, 3, 15), (69, 'Gold Rush', 'acier', 'sit down', '2017', 33.0, 3, 111), (70, 'Goliath', 'acier', 'sit down', '2002', 46.8, 6, 57), (71, 'Gotham', 'acier', 'sit down', '2021', 24.0, 22, 108), (72, 'Goudurix', 'acier', 'sit down', '1989', 36.0, 10, 39),
 (73, 'Hals-über-Kopf', 'acier', 'inverted', '2020', 30.0, 10, 85), (74, 'Heidi The Ride', 'bois', 'sit down', '2017', 22.0, 5, 16), (75, 'Helix', 'acier', 'sit down', '2014', 41.0, 7, 76), (76, 'Huracan', 'acier', 'sit down', '2010', 32.0, 3, 7), (77, 'Hype', 'acier', 'sit down', '2017', 45.7, 13, 32), (78, 'Hyper Coaster', 'acier', 'sit down', '2018', 61.0, 7, 78),
 (79, 'Hyperia', 'acier', 'sit down', '2024', 71.9, 7, 67), (80, 'Hyperion', 'acier', 'sit down', '2018', 77.0, 6, 63), (81, 'Icon', 'acier', 'sit down', '2018', 27.0, 7, 65), (82, 'Il Tempo Extra Gigante', 'acier', 'sit down', '2014', 25.0, 20, 96), (83, 'Inferno', 'acier', 'wing', '2007', 25.0, 6, 112), (84, 'Infusion', 'acier', 'inverted', '2007', 33.3, 10, 65),
@@ -262,7 +262,7 @@ INSERT INTO rollercoasters (rollercoaster_id, nom, structure, type, date_ouvertu
 (199, 'Werewolf', 'bois', 'sit down', '2019', 22.0, 5, 105), (200, 'Wilde Hilde', 'acier', 'sit down', '2018', 21.0, 26, 110), (201, 'Wildfire', 'bois', 'sit down', '2016', 56.0, 9, 100), (202, 'Wipeout', 'acier', 'sit down', '2007', 35.5, 10, 72), (203, 'Wodan Timbur Coaster', 'bois', 'sit down', '2012', 40.0, 5, 10), (204, 'Xpress: Platform 13', 'acier', 'sit down', '2000', 25.8, 10, 57),
 (205, 'Zadra', 'acier', 'sit down', '2019', 62.8, 9, 63), (206, 'Ziegelblitz', 'acier', 'sit down', '2024', 21.0, 3, 98);
 
-INSERT INTO compositions (fk_rollercoaster_id, fk_element_id, nombre) VALUES
+INSERT INTO compositions (fk_roallercoaster_id, fk_element_id, nombre) VALUES
 (3, 14, 1), (6, 6, 1), (6, 24, 1), (6, 44, 1), (6, 51, 1), (6, 71, 1), (13, 14, 1), (13, 21, 1), (13, 45, 1), (13, 51, 1),
 (13, 121, 1), (13, 136, 1), (14, 18, 2), (14, 67, 2), (14, 69, 1), (14, 85, 1), (14, 107, 1), (14, 116, 1), (14, 129, 1), (14, 138, 1),
 (19, 14, 1), (19, 18, 2), (19, 58, 1), (19, 136, 1), (19, 140, 1), (20, 6, 1), (20, 21, 1), (20, 52, 1), (20, 69, 1), (20, 123, 1),
@@ -274,3 +274,26 @@ INSERT INTO compositions (fk_rollercoaster_id, fk_element_id, nombre) VALUES
 (177, 71, 1), (177, 116, 1), (177, 129, 1), (177, 138, 2), (185, 2, 1), (185, 14, 1), (185, 33, 1), (185, 81, 1), (185, 104, 1), (195, 6, 1),
 (195, 18, 3), (195, 21, 1), (195, 24, 1), (195, 51, 1), (195, 59, 1), (195, 64, 1), (195, 70, 1), (195, 72, 1), (195, 115, 1), (195, 116, 1),
 (195, 122, 1), (195, 126, 1), (195, 138, 1), (205, 14, 1), (205, 137, 2), (205, 138, 1);
+
+
+-- Requete 1
+SELECT 
+    villes.nom AS VILLE, 
+    pays.nom AS PAYS
+FROM 
+    villes
+INNER JOIN pays ON villes.fk_pays_id = pays.pays_id;
+
+-- Requete 2
+SELECT 
+    parcs.nom AS PARC, 
+    villes.nom AS VILLE, 
+    pays.nom AS PAYS
+FROM 
+    villes
+INNER JOIN pays ON villes.fk_pays_id = pays.pays_id
+INNER JOIN parcs ON villes.ville_id = parcs.fk_ville_id;
+
+-- Requete 3
+SELECT 
+    
